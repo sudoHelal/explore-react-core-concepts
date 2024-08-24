@@ -3,14 +3,41 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Todo from './todo'
+import Actor from './Actor'
+import Singers from './Singers'
+import BookStore from './BookStore'
 
 function App() {
   const [count, setCount] = useState(0)
+  const books = [
+    {name: "physics", price: 100},
+    {name: "Math", price: 120},
+    {name: "Chemistry", price: 130},
+    {name: "Biology", price: 150},
+  ]
+  const actors = ['Sakib', 'Shoriful Raz', 'Jasim', 'Rubel', 'Salman Shah'];
+  const singers = [
+    {id: 1, name: "Helal Uddin", age: 31},
+    {id: 2, name: "Ahsan", age: 29},
+    {id: 3, name: "Raju", age: 27},
+  ]
 
   return (
     <>
     <h1>Vite + React</h1>
-    <Todo 
+    <BookStore books={books}></BookStore>
+    {
+      singers.map(singer => <Singers singer={singer}></Singers>)
+    }
+
+
+
+
+    <Actor name='Bappa Raz'></Actor>
+    {
+      actors.map(actor => <Actor name={actor}></Actor>)
+    }
+    {/* <Todo 
     task="Learn React" 
     isDone={true}></Todo>
     <Todo 
@@ -19,7 +46,7 @@ function App() {
     <Todo 
     task="Explore Core Concepts" isDone={true}></Todo>
     <Todo 
-    task="Try JSX" isDone={false}></Todo>
+    task="Try JSX" isDone={false}></Todo> */}
       {/* <Person></Person>
       <Person></Person>
       <Person></Person>
