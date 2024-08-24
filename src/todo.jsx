@@ -39,3 +39,13 @@
 //         <li>{task} {isDone || ": Do it"}</li>
 //     )
 // }
+
+let listItem;
+export default function Todo({task, isDone}){
+    if(isDone){
+        listItem = <li>{task} {isDone || ": Do it"}</li>;
+    }else{
+        listItem = <li>{task} {isDone || ": Do it"}</li>
+    }
+    return listItem;
+}
